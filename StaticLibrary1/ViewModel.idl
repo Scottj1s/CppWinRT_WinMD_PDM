@@ -1,0 +1,10 @@
+namespace StaticLibrary1
+{
+    [bindable]
+    [default_interface]
+    runtimeclass ViewModel 
+    {
+        ViewModel();
+        Int32 MyProperty;
+    }
+}

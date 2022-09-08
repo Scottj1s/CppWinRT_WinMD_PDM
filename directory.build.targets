@@ -1,0 +1,10 @@
+﻿<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+    <PropertyGroup>
+        <!--Metadata verification should be opt-in, as the potential for false positive build breaks exists-->
+        <CppWinRTVerifyMetadata>true</CppWinRTVerifyMetadata>
+    </PropertyGroup>
+
+    <Import Project="Microsoft.Windows.CppWinRT.VerifyMetadata.targets" Condition="'$(CppWinRTVerifyMetadata)' == 'true'"/>
+
+</Project>
