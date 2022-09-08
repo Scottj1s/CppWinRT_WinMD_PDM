@@ -1,0 +1,1 @@
+# CppWinRT_WinMD_PDM
