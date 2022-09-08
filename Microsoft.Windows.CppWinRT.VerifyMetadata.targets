@@ -85,7 +85,7 @@ namespace $(RootNamespace)
         </ItemGroup>
 
         <PropertyGroup>
-            <VerifyMetadataCpp>$(GeneratedFilesDir)VerifyMetadata.cpp</VerifyMetadataCpp>
+            <VerifyMetadataCpp>$(GeneratedFilesDir)$(ProjectName)_VerifyMetadata.cpp</VerifyMetadataCpp>
             <_PCH>@(ClCompile->Metadata('PrecompiledHeaderFile')->Distinct())</_PCH>
             <VerifyMetadataPch Condition="'$(_PCH)'!=''">#include "$(_PCH)"</VerifyMetadataPch>
             <VerifyMetadataCppLines>

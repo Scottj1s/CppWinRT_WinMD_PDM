@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CppWinRT_WinMD_PDM", "app\CppWinRT_WinMD_PDM.vcxproj", "{859EAFDF-92CC-46E8-B1B2-BDD541F546F3}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CppWinRT_WinMD_PDM", "App\CppWinRT_WinMD_PDM.vcxproj", "{859EAFDF-92CC-46E8-B1B2-BDD541F546F3}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StaticLibrary1", "StaticLibrary1\StaticLibrary1.vcxproj", "{E7D557B8-4094-4A04-BD8A-C518539D9815}"
 EndProject
@@ -11,6 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		directory.build.targets = directory.build.targets
 		Microsoft.Windows.CppWinRT.VerifyMetadata.targets = Microsoft.Windows.CppWinRT.VerifyMetadata.targets
+		README.md = README.md
 	EndProjectSection
 EndProject
 Global
