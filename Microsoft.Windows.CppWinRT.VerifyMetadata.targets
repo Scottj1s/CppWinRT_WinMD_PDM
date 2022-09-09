@@ -69,12 +69,16 @@ namespace $(RootNamespace)
             <WinMDInputs Condition="$(IncludePlatformWinMDs) OR $(IncludeReferenceWinMDs)" Include="@(CppWinRTPlatformWinMDInputs)"/>
             <WinMDInputs Condition="$(IncludePlatformWinMDs)" Include="@(CustomAdditionalPlatformWinMDInputs)"/>
             <WinMDInputs Condition="$(IncludeReferenceWinMDs)" Include="@(CppWinRTDirectWinMDReferences);@(CppWinRTDynamicProjectWinMDReferences);@(CustomAdditionalReferenceWinMDInputs)"/>
-            <WinMDInputs Condition="$(IncludeComponentWinMDs)" Include="@(CppWinRTMdMergeInputs);@(CppWinRTStaticProjectWinMDReferences);@(CustomAdditionalComponentWinMDInputs)"/>
+            <!--<WinMDInputs Condition="$(IncludeComponentWinMDs)" Include="@(CppWinRTMdMergeInputs);@(CppWinRTStaticProjectWinMDReferences);@(CustomAdditionalComponentWinMDInputs)"/>-->
             <WinMDInputs Condition="'%(WinMDInputs.Extension)' != '.winmd'" Remove="@(WinMDInputs)"/>
             <WinMDInputs Condition="'%(WinMDInputs.Filename)' == 'VerifyMetadata'" Remove="@(WinMDInputs)"/>
         </ItemGroup>
 
-        <GetFileHash Files="@(WinMDInputs)">
+        <RemoveDuplicates Inputs="@(WinMDInputs)">
+            <Output TaskParameter="Filtered" ItemName="WinMDInputsUnique" />
+        </RemoveDuplicates>
+
+        <GetFileHash Files="@(WinMDInputsUnique)">
             <Output TaskParameter="Items" ItemName="WinMDHashes" />
         </GetFileHash>
 
